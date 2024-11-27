@@ -1,10 +1,10 @@
 import Card from '../../components/cards-list/cards-list.tsx';
 
 type MainPageProps = {
-  countPlaces: number;
+  countChoices: number;
 }
 
-function MainPage({countPlaces} : MainPageProps): JSX.Element {
+function MainPage({countChoices} : MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -95,7 +95,7 @@ function MainPage({countPlaces} : MainPageProps): JSX.Element {
                 </ul>
               </form>
               <div className='cities__places-list places__list tabs__content'>
-                {[...Array<number>(countPlaces)].map(()=> <Card key={Math.random()}/>)}
+                {[...Array<number>(countChoices)].map(()=> <Card key={Math.random()}/>)}
               </div>
             </section>
             <div className="cities__right-section">
