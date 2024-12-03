@@ -1,15 +1,9 @@
 import Header from '../../components/header/header';
-import {AuthorizationStatus} from '../../const';
 
-type FavoritesProps = {
-  authorizationStatus: AuthorizationStatus;
-}
-
-function Favorites({authorizationStatus}: FavoritesProps): JSX.Element {
+function Favorites(): JSX.Element {
   return (
     <div className="page">
       <Header />
-      <div>{authorizationStatus}</div>
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
           <section className="favorites">
