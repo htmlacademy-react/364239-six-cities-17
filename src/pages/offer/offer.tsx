@@ -1,28 +1,12 @@
+import AddCommentForm from '../../components/add-comment-form/add-comment-form';
+import Header from '../../components/header/header';
+import {Link} from 'react-router-dom';
+
+
 function Offer(): JSX.Element {
   return (
     <div className="page">
-      <header className="header">
-        <div className="container">
-          <div className="header__wrapper">
-            <div className="header__left">
-              <a className="header__logo-link" href="main.html">
-                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
-              </a>
-            </div>
-            <nav className="header__nav">
-              <ul className="header__nav-list">
-                <li className="header__nav-item user">
-                  <a className="header__nav-link header__nav-link--profile" href="#">
-                    <div className="header__avatar-wrapper user__avatar-wrapper">
-                    </div>
-                    <span className="header__login">Sign in</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <main className="page__main page__main--offer">
         <section className="offer">
@@ -125,7 +109,9 @@ function Offer(): JSX.Element {
                 <h2 className="offer__host-title">Meet the host</h2>
                 <div className="offer__host-user user">
                   <div className="offer__avatar-wrapper offer__avatar-wrapper--pro user__avatar-wrapper">
-                    <img className="offer__avatar user__avatar" src="img/avatar-angelina.jpg" width="74" height="74" alt="Host avatar"/>
+                    <img className="offer__avatar user__avatar" src="img/avatar-angelina.jpg" width="74" height="74"
+                      alt="Host avatar"
+                    />
                   </div>
                   <span className="offer__user-name">
                     Angelina
@@ -136,10 +122,12 @@ function Offer(): JSX.Element {
                 </div>
                 <div className="offer__description">
                   <p className="offer__text">
-                    A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
+                    A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The
+                    building is green and from 18th century.
                   </p>
                   <p className="offer__text">
-                    An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.
+                    An independent House, strategically located between Rembrand Square and National Opera, but where
+                    the bustle of the city comes to rest in this alley flowery and colorful.
                   </p>
                 </div>
               </div>
@@ -149,7 +137,9 @@ function Offer(): JSX.Element {
                   <li className="reviews__item">
                     <div className="reviews__user user">
                       <div className="reviews__avatar-wrapper user__avatar-wrapper">
-                        <img className="reviews__avatar user__avatar" src="img/avatar-max.jpg" width="54" height="54" alt="Reviews avatar"/>
+                        <img className="reviews__avatar user__avatar" src="img/avatar-max.jpg" width="54" height="54"
+                          alt="Reviews avatar"
+                        />
                       </div>
                       <span className="reviews__user-name">
                         Max
@@ -163,12 +153,14 @@ function Offer(): JSX.Element {
                         </div>
                       </div>
                       <p className="reviews__text">
-                        A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
+                        A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+                        The building is green and from 18th century.
                       </p>
                       <time className="reviews__time" dateTime="2019-04-24">April 2019</time>
                     </div>
                   </li>
                 </ul>
+                <AddCommentForm />
               </section>
             </div>
           </div>
@@ -180,9 +172,9 @@ function Offer(): JSX.Element {
             <div className="near-places__list places__list">
               <article className="near-places__card place-card">
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
+                  <Link to="#">
                     <img className="place-card__image" src="img/room.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -190,7 +182,9 @@ function Offer(): JSX.Element {
                       <b className="place-card__price-value">&euro;80</b>
                       <span className="place-card__price-text">&#47;&nbsp;night</span>
                     </div>
-                    <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
+                    <button className="place-card__bookmark-button place-card__bookmark-button--active button"
+                      type="button"
+                    >
                       <svg className="place-card__bookmark-icon" width="18" height="19">
                         <use xlinkHref="#icon-bookmark"></use>
                       </svg>
@@ -204,7 +198,7 @@ function Offer(): JSX.Element {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Wood and stone place</a>
+                    <Link to="#">Wood and stone place</Link>
                   </h2>
                   <p className="place-card__type">Room</p>
                 </div>
@@ -212,9 +206,11 @@ function Offer(): JSX.Element {
 
               <article className="near-places__card place-card">
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
-                    <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
+                  <Link to="#">
+                    <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200"
+                      alt="Place image"
+                    />
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -236,7 +232,7 @@ function Offer(): JSX.Element {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Canal View Prinsengracht</a>
+                    <Link to="#">Canal View Prinsengracht</Link>
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
@@ -247,9 +243,11 @@ function Offer(): JSX.Element {
                   <span>Premium</span>
                 </div>
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <a href="#">
-                    <img className="place-card__image" src="img/apartment-03.jpg" width="260" height="200" alt="Place image"/>
-                  </a>
+                  <Link to="#">
+                    <img className="place-card__image" src="img/apartment-03.jpg" width="260" height="200"
+                      alt="Place image"
+                    />
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -271,7 +269,7 @@ function Offer(): JSX.Element {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <a href="#">Nice, cozy, warm big bed apartment</a>
+                    <Link to="#">Nice, cozy, warm big bed apartment</Link>
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
