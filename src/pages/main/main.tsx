@@ -4,18 +4,23 @@ import Locations from '../../components/locations/locations.tsx';
 import Sorting from '../../components/sorting/sorting.tsx';
 import { OfferType } from '../../types/offer.tsx';
 import { useState } from 'react';
+import Map from '../../components/map/map';
+import { AMSTERDAM_CITY } from '../../const.ts';
 
 type Props = {
   offers: OfferType[];
 }
 
 function MainPage({offers} : Props): JSX.Element {
-  const [isActiveCard, setActiveCard] = useState<string|null>(null);
+  const [activeOfferCardId, setActiveOfferCardId] = useState<string | undefined>('');
 
-
-  const handleActiveCardChange = (id: string | null) => setActiveCard(id);
-  // eslint-disable-next-line no-console
-  console.log(isActiveCard);
+  const offerCardMouseEnterHandler = (id: string): void => {
+    setActiveOfferCardId(id);
+  };
+  const offerCardMouseLeaveHandler = (): void => {
+    setActiveOfferCardId(undefined);
+  };
+  //  const selectedOffer = offers.find((offer) => offer.id === activeOfferCardId);
 
   return (
     <div className="page page--gray page--main">
@@ -30,11 +35,13 @@ function MainPage({offers} : Props): JSX.Element {
               <b className="places__found">312 places to stay in Amsterdam</b>
               <Sorting/>
               <div className="cities__places-list places__list tabs__content">
-                <OffersList onHandleActiveCardChange={handleActiveCardChange} offers={offers} />
+                <OffersList offers={offers} onOfferCardMouseEnterHandler={offerCardMouseEnterHandler} onOfferCardMouseLeaveHandler={offerCardMouseLeaveHandler}/>
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <section className="cities__map map">
+                <Map points={offers} selectedPoint={activeOfferCardId} city={AMSTERDAM_CITY}/>
+              </section>
             </div>
           </div>
         </div>
