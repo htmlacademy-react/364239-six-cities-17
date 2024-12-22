@@ -4,16 +4,17 @@ import {Link} from 'react-router-dom';
 type Props = {
   offer: OfferType;
   cardType: string;
-  onHandleActiveCardChange?: (id: string | null)=>void;
+  onOfferCardMouseEnterHandler?: (id: string)=> void;
+  onOfferCardMouseLeaveHandler?: () => void;
 }
 
-function Card({ offer, cardType, onHandleActiveCardChange = () => {} }: Props): JSX.Element {
+function Card({ offer, cardType, onOfferCardMouseEnterHandler = () => {}, onOfferCardMouseLeaveHandler }: Props): JSX.Element {
   const linkTo = `/offer/${offer.id}`;
   return (
     <article
       className={`${cardType}__card place-card`}
-      onMouseEnter={() => onHandleActiveCardChange(offer.id)}
-      onMouseLeave={() => onHandleActiveCardChange(null)}
+      onMouseEnter={() => onOfferCardMouseEnterHandler(offer.id)}
+      onMouseLeave={onOfferCardMouseLeaveHandler}
     >
       {
         offer.isPremium && (

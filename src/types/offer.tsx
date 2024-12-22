@@ -16,8 +16,10 @@ type CityType = {
   location: LocationType;
 };
 
-type LocationType = {
+export type LocationType = {
     latitude: number;
     longitude: number;
     zoom: number;
 };
+
+

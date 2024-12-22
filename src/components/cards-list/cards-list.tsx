@@ -3,15 +3,18 @@ import Card from '../card/card';
 
 type Props = {
     offers: OfferType[];
-    onHandleActiveCardChange: (id: string | null)=>void;
+    onOfferCardMouseEnterHandler: (id: string)=> void;
+    onOfferCardMouseLeaveHandler: () => void;
+
 };
 
-function OffersList({ offers, onHandleActiveCardChange }:Props) {
+function OffersList({ offers, onOfferCardMouseEnterHandler, onOfferCardMouseLeaveHandler}:Props) {
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) => (
         <Card
-          onHandleActiveCardChange={onHandleActiveCardChange}
+          onOfferCardMouseEnterHandler={onOfferCardMouseEnterHandler}
+          onOfferCardMouseLeaveHandler={onOfferCardMouseLeaveHandler}
           key={offer.id}
           offer={offer}
           cardType='cities'
