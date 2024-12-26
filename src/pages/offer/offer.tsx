@@ -1,9 +1,20 @@
-import AddCommentForm from '../../components/add-comment-form/add-comment-form';
 import Header from '../../components/header/header';
 import {Link} from 'react-router-dom';
+import ReviewsList from '../../components/reviews-list/reviews-list';
+import {REVIEW_MOCKS} from '../../mocks/reviews.ts';
+import { AMSTERDAM_CITY } from '../../const.ts';
+import Map from '../../components/map/map.tsx';
+import {OFFER_MOCKS} from '../../mocks/amsterdam.ts';
+import { OfferType } from '../../types/offer.tsx';
 
+const OFFER_MOCK = OFFER_MOCKS[0];
+
+const OFFERS_NEARBY = OFFER_MOCKS.slice(1, 4);
+
+const POINTS: OfferType[] = [OFFER_MOCK, ...OFFERS_NEARBY];
 
 function Offer(): JSX.Element {
+
   return (
     <div className="page">
       <Header/>
@@ -131,40 +142,10 @@ function Offer(): JSX.Element {
                   </p>
                 </div>
               </div>
-              <section className="offer__reviews reviews">
-                <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
-                <ul className="reviews__list">
-                  <li className="reviews__item">
-                    <div className="reviews__user user">
-                      <div className="reviews__avatar-wrapper user__avatar-wrapper">
-                        <img className="reviews__avatar user__avatar" src="img/avatar-max.jpg" width="54" height="54"
-                          alt="Reviews avatar"
-                        />
-                      </div>
-                      <span className="reviews__user-name">
-                        Max
-                      </span>
-                    </div>
-                    <div className="reviews__info">
-                      <div className="reviews__rating rating">
-                        <div className="reviews__stars rating__stars">
-                          <span style={{width: '80%'}}></span>
-                          <span className="visually-hidden">Rating</span>
-                        </div>
-                      </div>
-                      <p className="reviews__text">
-                        A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
-                        The building is green and from 18th century.
-                      </p>
-                      <time className="reviews__time" dateTime="2019-04-24">April 2019</time>
-                    </div>
-                  </li>
-                </ul>
-                <AddCommentForm />
-              </section>
+              <ReviewsList list={REVIEW_MOCKS}/>
             </div>
           </div>
-          <section className="offer__map map"></section>
+          <Map points={POINTS} selectedPoint={OFFER_MOCK.id} city={AMSTERDAM_CITY} className='offer__map map'/>
         </section>
         <div className="container">
           <section className="near-places places">

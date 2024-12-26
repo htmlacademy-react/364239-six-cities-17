@@ -22,4 +22,18 @@ export type LocationType = {
     zoom: number;
 };
 
+export type ReviewType = {
+  'id': string;
+  'comment': string;
+  'date': string;
+  'rating': number;
+  'user': User;
+};
+
+type User = {
+  'name': string;
+  'avatarUrl': string;
+  'isPro': boolean;
+}
+
 
