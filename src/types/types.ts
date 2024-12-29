@@ -12,3 +12,7 @@ export type Point = {
 };
 
 export type Points = Point[];
+
+export type CardType = 'favorites' | 'cities' | 'near-places';
+
+

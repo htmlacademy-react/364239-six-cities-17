@@ -20,7 +20,6 @@ function MainPage({offers} : Props): JSX.Element {
   const offerCardMouseLeaveHandler = (): void => {
     setActiveOfferCardId(undefined);
   };
-  //  const selectedOffer = offers.find((offer) => offer.id === activeOfferCardId);
 
   return (
     <div className="page page--gray page--main">
@@ -39,9 +38,7 @@ function MainPage({offers} : Props): JSX.Element {
               </div>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map">
-                <Map points={offers} selectedPoint={activeOfferCardId} city={AMSTERDAM_CITY}/>
-              </section>
+              <Map points={offers} selectedPoint={activeOfferCardId} city={AMSTERDAM_CITY} className='cities__map'/>
             </div>
           </div>
         </div>
